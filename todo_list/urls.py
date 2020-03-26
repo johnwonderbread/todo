@@ -9,4 +9,3 @@ urlpatterns = [
 	path('uncross_off/<list_id>', views.uncross_off, name='uncross_off'),
 	path('edit/<list_id>', views.edit, name='edit'),
 ]
- 

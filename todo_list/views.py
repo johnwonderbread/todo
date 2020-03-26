@@ -12,15 +12,15 @@ def home(request):
 			form.save()
 			all_items = List.objects.all
 			messages.success(request, ('Item has been successfully added to the list!'))
-			return render(request, 'home.html', {'all_items': all_items})
+			return render(request, 'todo_list/home.html', {'all_items': all_items})
 	
 	else:
 		all_items = List.objects.all 
-		return render(request, 'home.html', {'all_items': all_items})
+		return render(request, 'todo_list/home.html', {'all_items': all_items})
 
 def about(request):
 	context = {'first_name': 'John', 'last_name': 'Tyler'}
-	return render(request, 'about.html', context)
+	return render(request, 'todo_list/about.html', context)
 
 def delete(request, list_id):
 	item = List.objects.get(pk=list_id)
@@ -52,4 +52,4 @@ def edit(request, list_id):
 
 	else:
 		item = List.objects.get(pk=list_id)
-		return render(request, 'edit.html', {'item': item})
+		return render(request, 'todo_list/edit.html', {'item': item})
